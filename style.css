@@ -1,0 +1,171 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,700&display=swap");
+/* #50E3A4 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #f0efe9;
+}
+
+.container {
+  width: 350px;
+  height: 500px;
+  background: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 5px;
+  padding: 20px 40px;
+  overflow: auto;
+}
+
+h1 {
+  font-size: 26px;
+  margin-bottom: 10px;
+  text-align: center;
+  color: #50e3a4;
+}
+
+hr {
+  outline: 0;
+  border: 1px solid #eee;
+}
+
+#dateTime {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px 0 25px;
+  color: #555;
+  font-weight: 500;
+}
+
+.left {
+  display: grid;
+  grid-template-areas:
+    "date month month"
+    "date year year";
+}
+
+.left span {
+  display: flex;
+  align-items: center;
+}
+
+.left span:not(:first-child) {
+  font-size: 14px;
+}
+
+#date {
+  grid-area: date;
+  margin-right: 10px;
+  transform: scale(2, 2);
+}
+#month {
+  grid-area: month;
+  margin-bottom: -8px;
+}
+#year {
+  grid-area: year;
+}
+
+.add-todo {
+  position: relative;
+}
+
+#todo-input {
+  width: 90%;
+  outline: none;
+  border: 0.5px solid #999;
+  border-radius: 3px;
+  padding: 6px;
+  color: #333;
+  font-family: "Poppins", sans-serif;
+}
+
+#btn-add {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background: #50e3a4;
+  position: absolute;
+  top: -32%;
+  right: 1%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.1s ease-in-out;
+}
+
+#btn-add::before {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 2px;
+  border-radius: 5px;
+  background: #fff;
+}
+#btn-add::after {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 2px;
+  border-radius: 5px;
+  transform: rotate(90deg);
+  background: #fff;
+}
+
+#btn-add:active {
+  transform: scale(0.9);
+}
+
+.list {
+  margin-top: 30px;
+}
+
+.list #todo-list {
+  list-style-type: none;
+  color: #444;
+}
+
+.list .item {
+  font-size: 15px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+}
+
+.list .item:first-child {
+  padding-top: 0;
+}
+
+.list .item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.list .item .delete {
+  float: right;
+  color: #ff414d;
+  transition: transform 0.2s ease-out;
+}
+
+.list .item .delete:hover {
+  transform: scale(1.1);
+}
+
+.list .item.line {
+  text-decoration: line-through;
+  text-decoration-color: #333;
+  text-decoration-thickness: 2px;
+  color: #999;
+}
